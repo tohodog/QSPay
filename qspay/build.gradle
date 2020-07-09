@@ -38,11 +38,13 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    api (name: 'alipaySdk-15.7.7-20200702160044', ext: 'aar')
+//    api (name: 'alipaySdk-15.7.7-20200702160044', ext: 'aar')//发布远程仓库依赖arr不行
+    api files('libs/alipaySdk-15.7.7.jar')//从arr里提取出来的
+
     api files('libs/wechat-sdk-android-without-mta-6.6.4.jar')
 //    api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
-    implementation files('libs/UPPayAssistEx.jar')
-    implementation files('libs/UPPayPluginExPro.jar')
+
+    api files('libs/UPPayAssistEx.jar')
+    api files('libs/UPPayPluginExPro.jar')
 }

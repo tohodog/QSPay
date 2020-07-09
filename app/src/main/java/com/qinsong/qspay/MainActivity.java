@@ -67,11 +67,10 @@ public class MainActivity extends AppCompatActivity {
         paySdk(upPayInfo, PAY_TYPE.UPPAY);
     }
 
-    PayAPI payAPI;
 
     //启动支付
-    public void paySdk(final PayInfo payInfo, final PAY_TYPE pay_type) {
-        payAPI = PayAPI.get(this, pay_type).pay(payInfo, new PayCallback() {
+    public void paySdk(PayInfo payInfo, PAY_TYPE pay_type) {
+        PayAPI.get(this, pay_type).pay(payInfo, new PayCallback() {
             @Override
             public void onComplete(PAY_TYPE payType, String result) {
                 //同步支付结果成功
@@ -85,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("onFail", payType + "->" + msg);
                 Toast.makeText(MainActivity.this, "支付失败", Toast.LENGTH_LONG).show();
                 textView.setText(payType + "->" + msg);
-
             }
 
             @Override
@@ -93,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("onCancel", payType + "->" + "Cancel");
                 Toast.makeText(MainActivity.this, "支付取消", Toast.LENGTH_LONG).show();
                 textView.setText(payType + "->" + "Cancel");
-
             }
         });
 
