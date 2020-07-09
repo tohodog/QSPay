@@ -10,7 +10,7 @@
 [unionsvg]:  https://img.shields.io/badge/银联-3.4.9-00908C.svg
 
 [licensesvg]: https://img.shields.io/badge/License-Apache--2.0-red.svg
-[license]: https://github.com/tohodog/QSVideoPlayer/blob/master/LICENSE
+[license]: https://github.com/tohodog/QSPay/blob/master/LICENSE
 
 [apisvg]: https://img.shields.io/badge/API-9+-brightgreen.svg
 [api]: https://android-arsenal.com/api?level=9
@@ -96,7 +96,7 @@ dependencies {
 ```
 
 ## Log
-### v1.0.0(2020-07-9)
+### v1.0.0(2020-07-09)
   * 支持微信,支付宝,银联支付
 
 ## Other
