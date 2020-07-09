@@ -80,7 +80,7 @@ dependencies {
 ```
 ### 支付宝支付
 ```
-  //EnvUtils.setEnv(EnvUtils.EnvEnum.SANDBOX);//沙箱模式
+        //EnvUtils.setEnv(EnvUtils.EnvEnum.SANDBOX);//沙箱模式
         //参数由后台接口生成
         AliPayInfo payInfo = new AliPayInfo();
         payInfo.payParam = "alipay_sdk=alipay-easysdk-java-2.0.0&app_id=2019091767145019&biz_content=%7B%22out_trade_no%22%3A%22102020070909062278810001%22%2C%22total_amount%22%3A%220%22%2C%22subject%22%3A%22test%22%7D&charset=UTF-8&format=json&method=alipay.trade.app.pay&notify_url=https%3A%2F%2Fapi.reol.top%2FpayNotify%2FaliPay&sign=KRB3zZQQ7JeEeoHOJWwCSQaJ6ehv1I7WHSHtzJ4Y9pjq2HzBVR%2B5Mq9Z9%2BInAK%2Fcr%2Bc4pOiiJjPqdp61sUkrcWomPGjwFrObMC3xj29PeOBv%2FFCvR9UvRbIUr1tQ7El7YP8sSCRsI7BsBvHNhaxEz%2Ft6CvEAfchei28eC658cJvijw3FnYYVdRA2jBhU4YqTWM%2Ft9HEwBq5KGy8c9cOyyLvS9Hg0pAORVGkpSc9%2B8Rv0kwtmWsojoTTQZvHePYoWlXoR07WJxgOWcxLbMJ%2FASqDs5P1fBaoQLXJfbkQk1c%2Fx3sBnHWWuW%2FL%2BhtbikFX%2FkN9dJcLwuXauNyU9ls1Oog%3D%3D&sign_type=RSA2&timestamp=2020-07-09+09%3A06%3A22&version=1.0";
