@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">QSPay</string>
+
+    <style name="UPPay">
+        <item name="android:dialogTheme">@android:style/Theme.Dialog</item>
+    </style>
+</resources>

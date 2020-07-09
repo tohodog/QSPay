@@ -1,0 +1,68 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.qinsong.lib.pay">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.NFC" />
+
+    <uses-feature android:name="android.hardware.nfc.hce" />
+    <uses-permission android:name="org.simalliance.openmobileapi.SMARTCARD" />
+
+    <application android:label="@string/app_name">
+        <!-- alipay sdk begin -->
+
+        <!--<activity-->
+        <!--android:name="com.alipay.sdk.app.H5PayActivity"-->
+        <!--android:configChanges="orientation|keyboardHidden|navigation|screenSize"-->
+        <!--android:exported="false"-->
+        <!--android:screenOrientation="behind"-->
+        <!--android:windowSoftInputMode="adjustResize|stateHidden" />-->
+        <!--<activity-->
+        <!--android:name="com.alipay.sdk.app.H5AuthActivity"-->
+        <!--android:configChanges="orientation|keyboardHidden|navigation"-->
+        <!--android:exported="false"-->
+        <!--android:screenOrientation="behind"-->
+        <!--android:windowSoftInputMode="adjustResize|stateHidden" />-->
+
+        <!-- alipay sdk end -->
+
+        <!-- 不能指定屏幕方向 8.0系统报错 -->
+        <!--        <activity-->
+        <!--            android:name="com.qinsong.lib.wxapi.WXPayEntryActivity"-->
+        <!--            android:configChanges="keyboardHidden|orientation|screenSize"-->
+        <!--            android:exported="true"-->
+        <!--            android:theme="@android:style/Theme.Translucent.NoTitleBar" />-->
+
+        <activity
+            android:name="org.qinsong.lib.pay.upmp.UPPayEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <activity
+            android:name="com.unionpay.uppay.PayActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/UPPay"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name="com.unionpay.UPPayWapActivity"
+            android:configChanges="orientation|keyboardHidden|fontScale"
+            android:screenOrientation="portrait"
+            android:theme="@style/UPPay"
+            android:windowSoftInputMode="adjustResize" />
+
+        <uses-library
+            android:name="org.simalliance.openmobileapi"
+            android:required="false" />
+
+    </application>
+
+</manifest>
