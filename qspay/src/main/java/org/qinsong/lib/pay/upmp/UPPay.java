@@ -27,10 +27,13 @@ public class UPPay extends BasePay {
     @Override
     public void pay(Activity activity, PayInfo orderInfo) throws Exception {
         String tn = orderInfo.payParam();
+        String mode = orderInfo.testMode ? "01" : "00";
+        
 //        UPPayAssistEx.startPay(activity, null, null, tn, UPPayInfo.MODE);
 
         Intent intent = new Intent(activity, UPPayEntryActivity.class);
         intent.putExtra("tn", tn);
+        intent.putExtra("mode", mode);
         activity.startActivity(intent);
     }
 

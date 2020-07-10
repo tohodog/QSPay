@@ -14,7 +14,8 @@ public class UPPayEntryActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        UPPayAssistEx.startPay(this, null, null, getIntent().getStringExtra("tn"), UPPayInfo.MODE);
+        UPPayAssistEx.startPay(this, null, null,
+                getIntent().getStringExtra("tn"), getIntent().getStringExtra("mode"));
     }
 
     @Override

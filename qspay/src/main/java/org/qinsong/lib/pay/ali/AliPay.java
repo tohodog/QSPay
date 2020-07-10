@@ -8,6 +8,7 @@ import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.alipay.sdk.app.EnvUtils;
 import com.alipay.sdk.app.H5PayCallback;
 import com.alipay.sdk.app.PayTask;
 import com.alipay.sdk.util.H5PayResultModel;
@@ -36,7 +37,8 @@ public class AliPay extends BasePay {
 
     @Override
     public void pay(final Activity activity, PayInfo payInfo) {
-//        EnvUtils.setEnv(EnvUtils.EnvEnum.SANDBOX);
+
+        EnvUtils.setEnv(payInfo.testMode ? EnvUtils.EnvEnum.SANDBOX : EnvUtils.EnvEnum.ONLINE);
 
         final String finalPayParam = payInfo.payParam();
         if (finalPayParam.startsWith("http")) {
