@@ -1,8 +1,12 @@
 apply plugin: 'com.android.library'
-
+// JitPack Maven
+apply plugin: 'com.github.dcendents.android-maven'
+// Your Group
+group = 'com.github.tohodog'
 android {
     compileSdkVersion 29
-    buildToolsVersion "30.0.3"
+    buildToolsVersion "29.0.3"
+//    ndkVersion "22.0.7026061"
 
     defaultConfig {
         minSdkVersion 16
@@ -12,6 +16,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
+
     }
     sourceSets {
         main() {
