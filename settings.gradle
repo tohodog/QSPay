@@ -1,3 +1,6 @@
 rootProject.name='QSPay'
 include ':app'
-include ':qspay'
+include ':core'
+include ':uppay'
+include ':alipay'
+include ':wxpay'
