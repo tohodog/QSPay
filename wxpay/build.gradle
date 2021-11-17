@@ -35,9 +35,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    api project(':core')
-
-    api files('libs/wechat-sdk-android-without-mta-6.6.4.jar')
-//    api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+    compileOnly project(':core')
+//    api files('libs/wechat-sdk-android-without-mta-6.6.4.jar')
+    api 'com.tencent.mm.opensdk:wechat-sdk-android:6.8.0'
 }

@@ -1,5 +1,4 @@
 package com.qinsong.qspay.wxpay;
-
 import android.app.Activity;
 
 import com.tencent.mm.opensdk.modelpay.PayReq;

@@ -40,21 +40,21 @@ public class QSPayEntryActivity extends Activity implements IWXAPIEventHandler {
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        Log.e(TAG, "onNewIntent");
+        Log.i(TAG, "onNewIntent");
         setIntent(intent);
         api.handleIntent(intent, this);
     }
 
     @Override
     public void onReq(BaseReq req) {
-        Log.e("WXEntryActivity", "onReq:" + req);
+        Log.i("WXEntryActivity", "onReq:" + req);
     }
 
     @Override
     public void onResp(BaseResp resp) {
         finish();
 
-        Log.e(TAG, "onResp:" + resp.errCode);
+        Log.i(TAG, "onResp:" + resp.errCode);
         WXPAY wxPay = WXPAY.get();
         if (wxPay == null)
             return;

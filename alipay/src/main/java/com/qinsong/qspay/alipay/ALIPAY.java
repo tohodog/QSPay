@@ -115,7 +115,7 @@ public class ALIPAY extends BasePay {
                     callback.cancel();
                 else
                     // 该笔订单真实的支付结果，需要依赖服务端的异步通知。
-                    callback.fail(resultStatus + "|" + payResult.getMemo());
+                    callback.fail(resultStatus + " " + payResult.getMemo());
             }
         }
     };

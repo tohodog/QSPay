@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         payInfo.timeStamp = "1594257306";
         payInfo.packageValue = "Sign=WXPay";
         payInfo.sign = "8418D3E4C36B1E3A956763D71BBBF6DC";
-        paySdk(payInfo, PAY_TYPE.WEIXIN);
+        paySdk(payInfo, PAY_TYPE.WXPAY);
     }
 
     public void alipay(View view) {

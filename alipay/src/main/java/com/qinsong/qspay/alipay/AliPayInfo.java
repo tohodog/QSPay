@@ -2,7 +2,6 @@ package com.qinsong.qspay.alipay;
 
 import org.json.JSONObject;
 import org.qinsong.qspay.core.PayInfo;
-import org.qinsong.qspay.core.QSPayConstants;
 
 import java.util.Map;
 
@@ -16,14 +15,21 @@ import java.util.Map;
 
 public class AliPayInfo extends PayInfo {
 
+    public static String APPID = "";
+    public static String PRIVATEKEY = "";
+
     public String payParam;//后台构建好的参数,直接用
 
     //必填
+    public String appid = APPID;//标题
+    public String privateKey = PRIVATEKEY;//标题
+
+
     public String out_trade_no;//商户网站唯一订单号
     public String subject;//标题
     public String total_amount;//金额
     public final String product_code = "QUICK_MSECURITY_PA";//销售产品码，商家和支付宝签约的产品码，为固定值QUICK_MSECURITY_PA
-    public String notify_url = QSPayConstants.ALI_NOTICE_URL;
+    public String notify_url;
 
     //选填
     public String timeout_express;//订单付款时间
@@ -56,12 +62,10 @@ public class AliPayInfo extends PayInfo {
             biz_content.put("total_amount", total_amount);
             biz_content.put("timeout_express", timeout_express);
 
-            boolean rsa2 = (QSPayConstants.RSA2_PRIVATE.length() > 0);
-            Map<String, String> params = OrderInfoUtil.buildOrderParamMap(biz_content.toString(), notify_url);
+            Map<String, String> params = OrderInfoUtil.buildOrderParamMap(APPID, biz_content.toString(), notify_url);
             String orderParam = OrderInfoUtil.buildOrderParam(params);
             //这里需要去服务器签名,但是一般参数都是服务器构建好回来,不用客户端构建,减少风险
-            String privateKey = rsa2 ? QSPayConstants.RSA2_PRIVATE : QSPayConstants.RSA_PRIVATE;
-            String sign = OrderInfoUtil.getSign(params, privateKey, rsa2);
+            String sign = OrderInfoUtil.getSign(params, privateKey, true);
             payParam = orderParam + "&" + sign;
         } catch (Exception e) {
             e.printStackTrace();

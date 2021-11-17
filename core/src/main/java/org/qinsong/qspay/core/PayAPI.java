@@ -30,7 +30,7 @@ public class PayAPI {
         this.payType = payType;
         String type = payType.name();
         try {
-            Class<IPay> _class = (Class<IPay>) Class.forName("org.qinsong.qspay." + type.toLowerCase() + "." + type);
+            Class<IPay> _class = (Class<IPay>) Class.forName("com.qinsong.qspay." + type.toLowerCase() + "." + type);
             Constructor<IPay> c = _class.getConstructor(Callback.class);
             iPay = c.newInstance(new MyCallback());
         } catch (Exception e) {

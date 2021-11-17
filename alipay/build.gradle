@@ -35,9 +35,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    api project(':core')
-
+    compileOnly project(':core')
 //    api (name: 'alipaySdk-15.7.7-20200702160044', ext: 'aar')//发布远程仓库依赖arr不行
-    api files('libs/alipaySdk-15.7.7.jar')//从arr里提取出来的
+    api files('libs/alipaysdk-15.8.05.jar')//从arr里提取出来的
 }

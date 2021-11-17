@@ -8,7 +8,7 @@ import org.qinsong.qspay.core.PayInfo;
  * Created by song
  * Contact github.com/tohodog
  * Date 2018/7/31
- * https://wxpay.wxutil.com/pub_v2/app/app_pay.php
+ * https://developers.weixin.qq.com/doc/oplatform/Mobile_App/Access_Guide/Android.html#jump2
  */
 
 public class WXPayInfo extends PayInfo {

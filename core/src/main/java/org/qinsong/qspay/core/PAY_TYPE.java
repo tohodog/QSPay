@@ -9,7 +9,7 @@ package org.qinsong.qspay.core;
 
 public enum PAY_TYPE {
 
-    WEIXIN,
+    WXPAY,
     ALIPAY,
     UPPAY,
 

@@ -21,7 +21,7 @@ public class UPPayEntryActivity extends Activity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         finish();
-        Log.e("UPPayEntryActivity", "onActivityResult:" + data.getExtras());
+        Log.i("UPPayEntryActivity", "onActivityResult:" + data.getExtras());
         UPPAY upPay = UPPAY.get();
         if (upPay == null)
             return;

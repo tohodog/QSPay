@@ -3,8 +3,6 @@ package com.qinsong.qspay.alipay;
 
 import android.text.TextUtils;
 
-import org.qinsong.qspay.core.QSPayConstants;
-
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
@@ -27,13 +25,13 @@ public class OrderInfoUtil {
      * 构造支付订单参数列表
      * https://docs.open.alipay.com/204/105465/
      */
-    public static Map<String, String> buildOrderParamMap(String biz_content, String notify_url) {
+    public static Map<String, String> buildOrderParamMap(String appid, String biz_content, String notify_url) {
         Map<String, String> keyValues = new HashMap<String, String>();
 
         //构建业务参数
         keyValues.put("biz_content", biz_content);//"{\"timeout_express\":\"30m\",\"product_code\":\"QUICK_MSECURITY_PAY\",\"total_amount\":\"0.01\",\"subject\":\"1\",\"body\":\"我是测试数据\",\"out_trade_no\":\"" + getOutTradeNo() + "\"}");
 
-        keyValues.put("app_id", QSPayConstants.ALI_APPID);
+        keyValues.put("app_id", appid);
 
         keyValues.put("charset", "utf-8");
 

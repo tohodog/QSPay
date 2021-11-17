@@ -35,8 +35,8 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    api project(':core')
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly project(':core')
 
     api files('libs/UPPayAssistEx.jar')
     api files('libs/UPPayPluginExPro.jar')
