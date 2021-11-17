@@ -24,7 +24,10 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':qspay')
+//    implementation project(':core')
+    implementation project(':alipay')
+    implementation project(':wxpay')
+    implementation project(':uppay')
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'

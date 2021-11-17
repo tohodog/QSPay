@@ -6,13 +6,14 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.qinsong.lib.pay.PAY_TYPE;
-import org.qinsong.lib.pay.PayAPI;
-import org.qinsong.lib.pay.PayCallback;
-import org.qinsong.lib.pay.PayInfo;
-import org.qinsong.lib.pay.ali.AliPayInfo;
-import org.qinsong.lib.pay.upmp.UPPayInfo;
-import org.qinsong.lib.pay.wx.WXPayInfo;
+import com.qinsong.qspay.alipay.AliPayInfo;
+import com.qinsong.qspay.uppay.UPPayInfo;
+import com.qinsong.qspay.wxpay.WXPayInfo;
+
+import org.qinsong.qspay.core.PAY_TYPE;
+import org.qinsong.qspay.core.PayAPI;
+import org.qinsong.qspay.core.PayCallback;
+import org.qinsong.qspay.core.PayInfo;
 
 import java.util.List;
 
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         //参数由后台接口生成
         AliPayInfo payInfo = new AliPayInfo();
         //payInfo.testMode = true;//沙箱模式
-        payInfo.payParam = "alipay_sdk=alipay-easysdk-java-2.0.0&app_id=2019091767145019&biz_content=%7B%22out_trade_no%22%3A%22102020070909062278810001%22%2C%22total_amount%22%3A%220%22%2C%22subject%22%3A%22test%22%7D&charset=UTF-8&format=json&method=alipay.trade.app.pay&notify_url=https%3A%2F%2Fapi.reol.top%2FpayNotify%2FaliPay&sign=KRB3zZQQ7JeEeoHOJWwCSQaJ6ehv1I7WHSHtzJ4Y9pjq2HzBVR%2B5Mq9Z9%2BInAK%2Fcr%2Bc4pOiiJjPqdp61sUkrcWomPGjwFrObMC3xj29PeOBv%2FFCvR9UvRbIUr1tQ7El7YP8sSCRsI7BsBvHNhaxEz%2Ft6CvEAfchei28eC658cJvijw3FnYYVdRA2jBhU4YqTWM%2Ft9HEwBq5KGy8c9cOyyLvS9Hg0pAORVGkpSc9%2B8Rv0kwtmWsojoTTQZvHePYoWlXoR07WJxgOWcxLbMJ%2FASqDs5P1fBaoQLXJfbkQk1c%2Fx3sBnHWWuW%2FL%2BhtbikFX%2FkN9dJcLwuXauNyU9ls1Oog%3D%3D&sign_type=RSA2&timestamp=2020-07-09+09%3A06%3A22&version=1.0";
+        payInfo.payParam = "alipay_sdk=alipay-easysdk-java-2.0.0&app_id=2018053060296290&biz_content=%7B%22out_trade_no%22%3A%22102020080312330440410005%22%2C%22total_amount%22%3A%220.01%22%2C%22subject%22%3A%22xxxx%22%7D&charset=UTF-8&format=json&method=alipay.trade.app.pay&notify_url=https%3A%2F%2Fapi.reol.top%2FpayNotify%2FaliPay&sign=afuOqIWPOHTXiebZbwSmXdhqXuuZGgEDvAQfJ3nPV1v214aB6bfXIPZX7EVvvnZvRzqm0H4zmn7gBCFutvT8JK7MzmOamjpYWYso%2BGKl73E8jEU8N4237bAAm1AfaFYv9VEmAzeOsECOhN3eNaw78whDdL6Z%2FNz5XlKKg1GBNo0xgGqPMALmO21FFtM%2FszagaEGN7iz7%2FyMOKp8ag9msJBrs%2Fxe%2FZZm3Q55ccLWYYGt7UgQYkJQi%2BVb%2F5t8PqPawzVH9wZkAbdlr6i%2Fz%2BjK3uzdSUYSDD9RQYk2oIxVZdZnjxRWP0T48TADT4VyUd8cV12LqU0Cl4nsKmUe5TtXWLQ%3D%3D&sign_type=RSA2&timestamp=2020-08-03+12%3A33%3A04&version=1.0";
         paySdk(payInfo, PAY_TYPE.ALIPAY);
 
     }
